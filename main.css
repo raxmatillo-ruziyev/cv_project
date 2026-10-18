@@ -1,0 +1,1000 @@
+/* =====================================================
+   1. O'ZGARUVCHILAR VA BAZAVIY STILLAR
+   ===================================================== */
+
+   :root {
+    --brand: #2563eb;       /* Asosiy rang (logo, tugmalar, chiziqlar) */
+    --brand-glow: #60a5fa;  /* Hover paytidagi porlash rangi */
+  }
+  
+  /* Reset: barcha elementlarda bir xil o'lchov hisoblash */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-color: #0d0d0d; /* Gradient tugagan joyda ham qorong'i fon */
+    scroll-behavior: smooth;   /* Anchor linklarda silliq scroll (JS kerak emas) */
+  }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1e29 100%);
+    background-attachment: fixed; /* Scroll paytida fon qimirlamaydi */
+  }
+  
+  /* Bo'limlarga o'tganda sticky navbar tagida qolib ketmasligi uchun */
+  section[id],
+  footer[id] {
+    scroll-margin-top: 80px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  
+  /* =====================================================
+     2. NAVBAR
+     ===================================================== */
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+  
+  /* JS scroll > 50px bo'lganda shu klassni qo'shadi (xira oyna effekti) */
+  .navbar.scrolled {
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* --- Logotip --- */
+  .brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .ai-logo-box {
+    width: 37px;
+    height: 37px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Hover: logo o'z rangida neon kabi porlaydi */
+  .brand:hover .ai-logo-box {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px var(--brand)) drop-shadow(0 0 20px var(--brand));
+  }
+  
+  /* --- Menyu linklari --- */
+  .nav-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  .nav-link {
+    position: relative;
+    padding: 6px 0;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Hover paytida pastdan chiqadigan chiziq */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand);
+    box-shadow: 0 0 10px var(--brand);
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav-link:hover {
+    color: var(--brand);
+    text-shadow: 0 0 35px var(--brand-glow);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* --- "Contact me" tugmasi --- */
+  .nav-btn {
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--brand);
+    border: 2px solid var(--brand);
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+    transition: all 0.4s ease;
+  }
+  
+  /* Hover: tugma to'ladi va porlaydi */
+  .nav-btn:hover {
+    background: var(--brand);
+    color: #ffffff;
+    box-shadow: 0 0 20px var(--brand), 0 0 35px rgba(37, 99, 235, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .nav-btn:active {
+    transform: translateY(0);
+  }
+  
+  
+  /* =====================================================
+     3. HERO
+     ===================================================== */
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 100px 0;
+  }
+  
+  .hero-content {
+    flex: 1;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(37, 99, 235, 0.15);
+    color: var(--brand-glow);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .hero-title {
+    margin: 18px 0 10px;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+  
+  /* Ismni ajratib ko'rsatish (rangli + porlash) */
+  .highlight {
+    color: var(--brand);
+    text-shadow: 0 0 20px var(--brand);
+  }
+  
+  .hero-subtitle {
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #94a3b8;
+  }
+  
+  .hero-description {
+    max-width: 520px;
+    margin-bottom: 35px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #a1a1aa;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+  }
+  
+  /* --- Asosiy va ikkilamchi tugmalar --- */
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--brand);
+    color: #ffffff;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 15px var(--brand);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 0 25px var(--brand);
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    padding: 14px 32px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* --- Kod ko'rinishidagi karta (o'ng tomon) --- */
+  .hero-visual {
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .visual-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 24px;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(37, 99, 235, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .visual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(37, 99, 235, 0.35);
+  }
+  
+  /* Karta tepasi: 3 ta rangli nuqta + fayl nomi */
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .code-title {
+    margin-left: auto;
+    font-family: monospace;
+    font-size: 13px;
+    color: #64748b;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .red    { background: #ef4444; }
+  .yellow { background: #f59e0b; }
+  .green  { background: #10b981; }
+  
+  /* Kod matni va sintaksis ranglari */
+  .code-body {
+    overflow-x: auto;
+    font-family: 'Fira Code', Consolas, Monaco, monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e2e8f0;
+  }
+  
+  .keyword { color: #f472b6; }
+  .string  { color: #38bdf8; }
+  
+  
+  /* =====================================================
+     4. STATISTIKA
+     ===================================================== */
+  
+  .stats-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+  }
+  
+  /* Shisha effektli (glassmorphism) konteyner, ustunlar avtomatik joylashadi */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 24px 16px;
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .stat-card {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3b82f6;
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+  }
+  
+  .stat-label {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #94a3b8;
+  }
+  
+  
+  /* =====================================================
+     5. SERVICES
+     ===================================================== */
+  
+  .services-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  
+  .services-header {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .services-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #3b82f6;
+  }
+  
+  .services-title {
+    margin-top: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 28px 20px;
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+  }
+  
+  /* Ajratib ko'rsatilgan karta (2-karta) */
+  .service-card.active-card {
+    background-color: #1e293b;
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+  }
+  
+  .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    background-color: rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
+  }
+  
+  .active-card .card-icon {
+    background-color: #3b82f6;
+  }
+  
+  .card-title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .card-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #94a3b8;
+  }
+  
+  
+  /* =====================================================
+     6. PROJECTS (PORTFOLIO)
+     ===================================================== */
+  
+  .portfolio-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+  }
+  
+  .portfolio-header {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #3b82f6;
+  }
+  
+  .portfolio-title {
+    margin: 10px 0 12px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .portfolio-desc {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+  
+  /* Keng ekranda 2 ustun; min(100%, 450px) tor ekranda gorizontal scroll chiqmasligini ta'minlaydi */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    overflow: hidden;
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Rasm ramkasi: uzun skrinshotning yuqori qismi ko'rinadi */
+  .project-image-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+  
+  .project-content {
+    padding: 24px;
+  }
+  
+  .project-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .tag {
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+  }
+  
+  .project-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .project-details {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #94a3b8;
+  }
+  
+  /* "View Details" linki (strelka hoverda o'ngga suriladi) */
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .project-link:hover {
+    color: #60a5fa;
+  }
+  
+  .project-link svg {
+    transition: transform 0.2s ease;
+  }
+  
+  .project-link:hover svg {
+    transform: translateX(4px);
+  }
+  
+  
+  /* =====================================================
+     7. FOOTER
+     ===================================================== */
+  
+  .footer-section {
+    width: 100%;
+    margin-top: 100px;
+    padding: 60px 0 20px;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* --- 1-ustun: logo, bio, ijtimoiy tarmoqlar --- */
+  .footer-logo {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .footer-logo span {
+    color: #3b82f6;
+  }
+  
+  .footer-bio {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+  
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    color: #94a3b8;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-socials a:hover {
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.4);
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  /* --- 2, 3, 4-ustunlar: sarlavha va linklar --- */
+  .footer-title {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .footer-links,
+  .footer-contact-info {
+    list-style: none;
+  }
+  
+  .footer-links li,
+  .footer-contact-info li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a,
+  .footer-contact-info a,
+  .footer-contact-info li {
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links a:hover,
+  .footer-contact-info a:hover {
+    color: #3b82f6;
+  }
+  
+  /* "Let's Talk" tugmasi */
+  .footer-cta-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-cta-btn:hover {
+    color: #ffffff;
+    background-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  }
+  
+  /* --- Pastki qism: mualliflik huquqi --- */
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 20px 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 13px;
+    color: #64748b;
+  }
+  
+  
+  /* =====================================================
+     8. MOSLASHUVCHANLIK (RESPONSIVE)
+     ===================================================== */
+  
+  /* Planshet: hero bloki ustma-ust joylashadi */
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      padding: 60px 0;
+      gap: 40px;
+    }
+  
+    .hero-visual {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .hero-title {
+      font-size: 40px;
+    }
+  }
+  
+  /* Telefon: menyu va tugmalar ixchamlashadi */
+  @media (max-width: 640px) {
+    .nav-list {
+      gap: 16px;
+    }
+  
+    .nav-link {
+      font-size: 14px;
+    }
+  
+    .nav-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  
+    .hero-title {
+      font-size: 32px;
+    }
+  
+    .hero-actions {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* ==========================================
+   CV / OBYEKTIVKA STYLES
+   ========================================== */
+
+.cv-container {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Blok kartasi */
+.cv-card {
+  background-color: rgba(15, 23, 42, 0.6);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(12px);
+}
+
+/* Profil yuqori qismi */
+.cv-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-avatar-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #3b82f6;
+  flex-shrink: 0;
+}
+
+.cv-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cv-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.cv-badge {
+  font-size: 12px;
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Sarlavhalar */
+.cv-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-section-title h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Grid Layout (2 va 4 ustunli) */
+.cv-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.cv-grid.col-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.cv-grid.col-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.cv-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.cv-value {
+  font-size: 15px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* 3-Jadval: Table stili */
+.cv-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.cv-table th {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #3b82f6;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cv-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ==========================================
+   MINIMALIST PROGRESS & LOADER STYLES
+   ========================================== */
+
+   .progress-page {
+    width: 100%;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 60px;
+  }
+  
+  .progress-card {
+    margin-top:100px;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(15, 23, 42, 0.5);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 48px 32px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+  }
+  
+  /* SODDA VA ELEGANT LOADER */
+  .minimal-loader {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: smoothSpin 1.3s linear infinite;
+  }
+  
+  @keyframes smoothSpin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Sarlavha va Matnlar */
+  .progress-subtitle {
+    font-size: 12px;
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+  }
+  
+  .progress-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .progress-desc {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  
+  /* Sodda Tugma */
+  .back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .back-home-btn:hover {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #3b82f6;
+  }

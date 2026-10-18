@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raxmatillo Ruziyev — Frontend Engineer portfolio">
+    <title>About me</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Asosiy stillar -->
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- ================= NAVBAR ================= -->
+        <nav class="navbar">
+            <!-- Logotip -->
+            <a href="#home" class="brand" aria-label="Home">
+                <div class="ai-logo-box">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="30" height="30" rx="2" stroke="var(--brand)" stroke-width="2" />
+                        <path d="M12 20H28M20 12V28" stroke="var(--brand)" stroke-width="2" stroke-linecap="square" />
+                        <circle cx="20" cy="20" r="4" fill="var(--brand)" />
+                        <path d="M5 12H10M30 12H35M5 28H10M30 28H35" stroke="var(--brand)" stroke-width="2" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Menyu linklari -->
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About me</a></li>
+                <li class="nav-item"><a href="./project.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#hobby" class="nav-link">Hobbies</a></li>
+            </ul>
+
+            <!-- "Contact me" tugmasi (JS orqali #contact ga olib boradi) -->
+            <div class="nav-action">
+                <button class="nav-btn">Contact me</button>
+            </div>
+        </nav>
+
+        <main class="cv-container">
+
+            <!-- 1-JADVAL: Shaxsiy Ma'lumotlar -->
+            <section class="cv-card">
+                <div class="cv-header">
+                    <div class="cv-avatar-box">
+                        <img src="./img/me.jpg" alt="Ruziyev Raxmatilla" class="cv-avatar">
+                    </div>
+                    <div class="cv-title-box">
+                        <h1 class="cv-name">Ruziyev Raxmatilla Rustamali o'g'li</h1>
+                        <span class="cv-badge">№ 23116-23</span>
+                    </div>
+                </div>
+
+                <div class="cv-grid col-4">
+                    <div class="cv-item">
+                        <span class="cv-label">TUG'ILGAN SANASI</span>
+                        <span class="cv-value">29-08-2005</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">JINSI</span>
+                        <span class="cv-value">Erkak</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">MANZIL (DOIMIY)</span>
+                        <span class="cv-value">Surxondaryo viloyati, Qumqo'rg'on tumani</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">MANZIL (VAQTINCHA)</span>
+                        <span class="cv-value">Toshkent shahri, Yunusobod tumani</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2-JADVAL: Ta'lim Ma'lumotlari -->
+            <section class="cv-card">
+                <div class="cv-section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                    <h2>Ta'lim Ma'lumotlari</h2>
+                </div>
+
+                <div class="cv-grid col-2">
+                    <div class="cv-item">
+                        <span class="cv-label">YO'NALISH</span>
+                        <span class="cv-value">Kompyuter injiniringi (Multimedia texnologiyalari)</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">O'QISH TILI</span>
+                        <span class="cv-value">O'zbek</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">DARAJASI</span>
+                        <span class="cv-value">Bakalavr</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">TA'LIM SHAKLI</span>
+                        <span class="cv-value">Kunduzgi</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">KURS</span>
+                        <span class="cv-value">3-kurs</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">GURUH</span>
+                        <span class="cv-value">214-24 Klo'</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">MURABBIY</span>
+                        <span class="cv-value">Xasanov Raxmatjon</span>
+                    </div>
+                    <div class="cv-item">
+                        <span class="cv-label">STIPENDIYA</span>
+                        <span class="cv-value">Mavjud</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3-JADVAL: Yaqin Qarindoshlar (Obyektivka formati) -->
+            <section class="cv-card">
+                <div class="cv-section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <h2>Yaqin Qarindoshlari Haqida Ma'lumot</h2>
+                </div>
+
+                <div class="cv-table-wrapper">
+                    <table class="cv-table">
+                        <thead>
+                            <tr>
+                                <th>Qarindoshligi</th>
+                                <th>F.I.SH.</th>
+                                <th>Tug'ilgan yili</th>
+                                <th>Ish joyi va lavozimi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Otasi</td>
+                                <td>Raxmatov R. R.</td>
+                                <td>1975-yil</td>
+                                <td>Muhandis</td>
+                            </tr>
+                            <tr>
+                                <td>Onasi</td>
+                                <td>Raxmatova G. O'.</td>
+                                <td>1979-yil</td>
+                                <td>Uy bekasi</td>
+                            </tr>
+                            <tr>
+                                <td> Opasi</td>
+                                <td>Ruziyeva G. R.</td>
+                                <td>2000-yil</td>
+                                <td>O'qituvchi</td>
+                            </tr>
+                            <tr>
+                                <td> Opasi</td>
+                                <td>Ruziyeva Sh. R.</td>
+                                <td>2002-yil</td>
+                                <td>O'qituvchi</td>
+                            </tr>
+                            <tr>
+                                <td> Singlisi</td>
+                                <td>Ruziyeva N. R.</td>
+                                <td>2008-yil</td>
+                                <td>Talaba</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+        <!-- ================= FOOTER (Contact tugmasi shu yerga olib keladi) ================= -->
+        <footer id="contact" class="footer-section">
+            <div class="footer-container">
+
+                <!-- 1-ustun: qisqa bio va ijtimoiy tarmoqlar -->
+                <div class="footer-col footer-brand">
+                    <h3 class="footer-logo">Raxmatillo<span>.dev</span></h3>
+                    <p class="footer-bio">
+                        Frontend Engineer passionate about crafting scalable, high-performance, and visually appealing
+                        web applications.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://github.com/raxmatillo-ruziyev" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/raxmatillo-ruziyev-4a2402324/?isSelfProfile=true"
+                            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://t.me/student_tuit" target="_blank" rel="noopener noreferrer"
+                            aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21.5 2L2 9.5l7.5 3L17 6.5l-5.5 8.5 7.5 5L21.5 2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2-ustun: navigatsiya -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="./about.html">About Me</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#hobby">Hobbies</a></li>
+                    </ul>
+                </div>
+
+                <!-- 3-ustun: xizmatlar -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Expertise</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Frontend Dev</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">React Apps</a></li>
+                        <li><a href="#services">Performance</a></li>
+                    </ul>
+                </div>
+
+                <!-- 4-ustun: aloqa -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact-info">
+                        <li>Tashkent, Uzbekistan</li>
+                        <li><a href="mailto:contact@raxmatillo.dev">contact@raxmatillo.dev</a></li>
+                    </ul>
+                    <a href="mailto:contact@raxmatillo.dev" class="footer-cta-btn">Let's Talk ➔</a>
+                </div>
+            </div>
+
+            <!-- Mualliflik huquqi -->
+            <div class="footer-bottom">
+                <p>© 2026 Raxmatillo Ruziyev. Designed & Built with passion.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
